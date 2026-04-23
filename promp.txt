@@ -1,0 +1,34 @@
+Sen dunyodagi eng tajribali Node.js, React va Telegram Mini App dasturchisisan. Men kod yozishni umuman bilmayman. Menga oldingi oddiy bot o'rniga, endi Telegram chatining ichida ochiladigan zamonaviy 'Mini App' (Web App) interfeysiga ega Pizza yetkazib berish botini noldan yaratib ber.
+
+**Eng asosiy qoidalar:**
+
+1. Menga kod qanday ishlashini umuman tushuntirib o'tirma, shunchaki hamma fayllarni yaratib ber.
+2. Hali ham HECH QANDAY ma'lumotlar bazasi (Database) ishlatma! Barcha ma'lumotlarni va savatni React xotirasida (state) saqla.
+3. Dizayn o'ta sodda, toza va minimalist bo'lishi shart. Ortiqcha chiziqlar, to'q ranglar kerak emas. Oq fon va chiroyli tartibli yozuvlardan foydalan.
+
+**Quyidagi barcha funksiyalarni to'liq bajarib ber:**
+
+**1. Asosiy Bot qismi (Node.js):**
+
+- Loyihada `.env` fayli yaratib, `BOT_TOKEN` va `ADMIN_ID` ni qo'shib qo'y.
+- Foydalanuvchi botga `/start` yozganda: 'Assalomu alaykum! Eng mazali pizzalarni buyurtma qilish uchun pastdagi tugmani bosing' deb yozsin.
+- Shu xabarning tagida bitta katta '📱 Menyuni ochish' degan maxsus Web App tugmasi bo'lsin. (Hozircha Web App URL o'rniga localhost yoki vaqtinchalik link qo'yib tur).
+
+**2. Mini App Interfeysi (React):**
+
+- Ekranda xuddi zamonaviy mobil ilovalardagidek 4 ta pizza ro'yxati (Margarita, Peperoni, Qazi pizza va Pishloqli) chiroyli kartochkalar bo'lib tursin. Har birida internetdan olingan rasm, qisqacha ta'rif va narxi yozilgan bo'lsin.
+- Har bir pizzaning tagida 'Qo'shish (+)' tugmasi bo'lsin.
+- Foydalanuvchi biror pizzani qo'shganda, ekranning eng pastki qismida yopishib turadigan '🛒 Savatga o'tish (Jami: ... so'm)' degan tugma paydo bo'lsin.
+
+**3. Savat va Rasmiylashtirish (Mini App ichida):**
+
+- 'Savatga o'tish' bosilganda, yangi sahifa ochilsin. U yerda tanlangan pizzalar ro'yxati va ism, telefon raqamini kiritish uchun ikkita oddiy forma (input) chiqsin.
+- Eng pastda 'Buyurtmani tasdiqlash' degan asosiy tugma bo'lsin.
+- Foydalanuvchi 'Buyurtmani tasdiqlash'ni bossa, Telegram Mini App yopilsin va barcha ma'lumotlar (ism, telefon, buyurtma tarkibi va jami summa) orqaga — botga yuborilsin (`Telegram.WebApp.sendData` funksiyasi orqali).
+
+**4. Botning javobi va Adminga xabar:**
+
+- Bot Mini App'dan kelgan ma'lumotni qabul qilib olgach, darhol `.env` dagi `ADMIN_ID` ga buyurtma chekini yuborsin. Adminga boradigan chekda: mijozning ismi, telefoni, nima buyurtma qilgani va jami summa tursin.
+- Mijozning o'ziga esa bot chatida 'Buyurtmangiz muvaffaqiyatli qabul qilindi! Kuryerimiz tez orada siz bilan bog'lanadi' deb xabar yozsin.
+
+Iltimos, Bot qismi (backend) va Mini App qismi (frontend) papkalarini alohida-alohida ajratib, barcha fayllarni yaratib ber va eng oxirida terminalda qaysi komandalar orqali ikkalasini ham ishga tushirishimni yozib ber.
